@@ -29,6 +29,8 @@ public class PlayerScript : MonoBehaviour
     
     //How I'd like to move left/right
     public float DesiredVel = 0;
+
+    public Animation Anim; //Look up if this is how u define it
     
     void Update()
     {
@@ -42,6 +44,8 @@ public class PlayerScript : MonoBehaviour
             DesiredVel = Speed;
             //If I hit right, mark that I'm not facing left
             FacingLeft = false;
+
+            Anim.Play("Walking"); //how to play an animation
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         { 

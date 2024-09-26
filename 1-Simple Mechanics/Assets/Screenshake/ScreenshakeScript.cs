@@ -32,12 +32,12 @@ public class ScreenshakeScript : MonoBehaviour
             //Make it slowly count down
             ShakeTimer -= Time.deltaTime;
             //Calculate how much shake we want this frame
-            Vector3 shake = new Vector3(Random.Range(-Intensity, Intensity),
-                Random.Range(-Intensity, Intensity));
+            Vector3 shake = new Vector3(Random.Range(-Intensity, Intensity),                //screenshake
+                Random.Range(-Intensity, Intensity));                                       //screenshake
             //Set its position to be its start position plus the shake offset
-            transform.position = StartPos + shake;
+            transform.position = StartPos + shake;                                          //screenshake
         }
         else //When we're done, go back to our start position
-            transform.position = StartPos;
+            transform.position = StartPos;                                                  //how to reset your screen after screenshake
     }
 }
