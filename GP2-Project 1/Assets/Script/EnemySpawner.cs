@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
             spawnCountdown = Random.Range(3, 10);
 
             Instantiate(spawnedEnemy, transform.position, Quaternion.identity);
+            //timeToSpawn *= 0.05; //lowers the time for enemies to spawn every time they spawn this line has an error
 
             spawnSoundSource.PlayOneShot(spawnSound);
         }
