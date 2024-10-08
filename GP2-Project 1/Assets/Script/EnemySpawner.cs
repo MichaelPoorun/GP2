@@ -9,6 +9,10 @@ public class EnemySpawner : MonoBehaviour
 
     public float timeToSpawn, spawnCountdown;
 
+    public AudioClip spawnSound;
+
+    public AudioSource spawnSoundSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +28,8 @@ public class EnemySpawner : MonoBehaviour
             spawnCountdown = Random.Range(3, 10);
 
             Instantiate(spawnedEnemy, transform.position, Quaternion.identity);
+
+            spawnSoundSource.PlayOneShot(spawnSound);
         }
     }
 }

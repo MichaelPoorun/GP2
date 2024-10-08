@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 mousePos;
 
+    public AudioClip FirePistol;
+    public AudioClip TakingDamage;
+    public AudioSource AS;
+
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [Range(0.1f, 2f)]
@@ -92,6 +96,7 @@ public class PlayerController : MonoBehaviour
     private void Shoot()
     {
         Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
+        AS.PlayOneShot(FirePistol);
     }
 
     public void TakeDamage(float damageAmount)
@@ -109,6 +114,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         TakeDamage(1);
+        AS.PlayOneShot(TakingDamage);
     }
 
     //private void OnCollisionEnter2D(Collision2D other)
